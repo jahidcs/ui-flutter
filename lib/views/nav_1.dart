@@ -15,6 +15,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       backgroundColor: Colors.white10,
       appBar: AppBar(
         title: const Text('NAV 1'),
+        backgroundColor: Colors.orange,
       ),
       body: Stack(
         children: [
