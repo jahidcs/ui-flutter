@@ -1,3 +1,5 @@
+import 'package:bottomnav_ui/views/nav_1.dart';
+import 'package:bottomnav_ui/views/nav_2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,28 +13,60 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Bottom Navbar',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomePage(),
+      debugShowCheckedModeBanner: false,
+      home: const LandingPage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<LandingPage> createState() => _LandingPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('NAV bar'),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 50.0,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const BottomNavBar();
+                    },
+                  ),
+                );
+              },
+              child: const Text('NAV 1'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const BottomNavBarV2();
+                    },
+                  ),
+                );
+              },
+              child: const Text('NAV 2'),
+            )
+          ],
+        ),
       ),
     );
   }
