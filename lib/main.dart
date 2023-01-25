@@ -1,6 +1,7 @@
 import 'package:bottomnav_ui/views/nav_1.dart';
 import 'package:bottomnav_ui/views/nav_2.dart';
 import 'package:bottomnav_ui/views/nav_3.dart';
+import 'package:bottomnav_ui/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: const LandingPage(),
+      home: const SplashScreen(),
     );
   }
 }
