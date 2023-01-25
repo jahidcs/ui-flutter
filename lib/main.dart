@@ -1,5 +1,6 @@
 import 'package:bottomnav_ui/views/nav_1.dart';
 import 'package:bottomnav_ui/views/nav_2.dart';
+import 'package:bottomnav_ui/views/nav_3.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -42,6 +43,7 @@ class _LandingPageState extends State<LandingPage> {
               height: 50.0,
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -54,6 +56,7 @@ class _LandingPageState extends State<LandingPage> {
               child: const Text('NAV 1'),
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -64,7 +67,21 @@ class _LandingPageState extends State<LandingPage> {
                 );
               },
               child: const Text('NAV 2'),
-            )
+            ),
+            ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const BottomNavBarV3();
+                    },
+                  ),
+                );
+              },
+              child: const Text('NAV 3'),
+            ),
           ],
         ),
       ),
