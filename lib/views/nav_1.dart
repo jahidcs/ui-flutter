@@ -22,7 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           Positioned(
             bottom: 0,
             left: 0,
-            child: Container(
+            child: SizedBox(
               width: size.width,
               height: 80,
               // color: Colors.red,
@@ -37,11 +37,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     child: FloatingActionButton(
                       onPressed: () {},
                       backgroundColor: Colors.orange,
-                      child: Icon(Icons.note),
                       elevation: 0.1,
+                      child: const Icon(Icons.note),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: size.width,
                     height: 80,
                     child: Row(
@@ -80,7 +80,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
 class BNBCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    //TODO: implement Paint
     Paint paint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.fill;
@@ -88,7 +87,7 @@ class BNBCustomPainter extends CustomPainter {
     path.quadraticBezierTo(size.width * 0.20, 0, size.width * 0.35, 0);
     path.quadraticBezierTo(size.width * 0.40, 0, size.width * 0.40, 20);
     path.arcToPoint(Offset(size.width * 0.60, 20),
-        radius: Radius.circular(10.0), clockwise: false);
+        radius: const Radius.circular(10.0), clockwise: false);
 
     path.quadraticBezierTo(size.width * 0.60, 0, size.width * 0.65, 0);
     path.quadraticBezierTo(size.width * 0.80, 0, size.width, 20);
